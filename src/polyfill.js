@@ -35,3 +35,8 @@ if (!window.Map) {
     debugger
     window.Map = new Map();
 }
+
+Object.setPrototypeOf = Object.setPrototypeOf || function(obj, proto) {
+    obj.__proto__ = proto;
+    return obj;
+};
