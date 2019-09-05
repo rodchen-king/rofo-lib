@@ -11,9 +11,11 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.6",
     "babel-plugin-named-asset-import": "^0.3.3",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react-app": "^9.0.1",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "core-js": "^3.2.1",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
@@ -34,9 +36,8 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.8.0",
     "jest-watch-typeahead": "0.3.1",
-    "less": "^3.10.3",
-    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.5.0",
+    "mutation-observer": "^1.0.3",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -71,11 +72,13 @@
   },
   "browserslist": {
     "production": [
+      "ie > 9",
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
+      "ie > 9",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
@@ -133,5 +136,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0"
   }
 }

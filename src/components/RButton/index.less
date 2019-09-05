@@ -1,0 +1,38 @@
+/* css注释不可以使用双斜杠 */
+
+.rbtn {
+  line-height: 1.5;
+  display: inline-block; 
+  margin-bottom: 0;
+  font-weight: 400;
+  vertical-align: middle;  
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid #d7dde4;
+  white-space: nowrap;
+  user-select: none;
+  padding: 6px 15px;
+  font-size: 12px;
+  border-radius: 4px;
+  transform: translateZ(0);
+  transition: color .2s linear,background-color .2s linear,border .2s linear;
+  background-color: #39f;
+  border-color: #39f;
+  color: #fff;
+
+  &:active, &:focus {
+    outline: 0;   // 选中之后浏览器默认的轮廓样式
+  }
+
+  &:active {
+    background-color: #39fc;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0;
+    font-size: 14px;
+  }
+}

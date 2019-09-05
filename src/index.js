@@ -1,3 +1,11 @@
+import './polyfill.js';
+// import 'babel-polyfill';
+// import 'react-app-polyfill/ie9';
+// import 'react-app-polyfill/ie11';
+import 'core-js/es';
+import 'react-app-polyfill/ie9';
+import 'mutation-observer';
+import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
