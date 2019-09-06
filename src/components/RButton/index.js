@@ -1,5 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
+
+// css & img
 import './index.less';
+import colorLoadingIcon from '@/assets/img/common/colorloading.svg';
+import whiteLoadingIcon from '@/assets/img/common/whiteloading.svg';
+
 
 /* basic information */
 // padding: 9px 15px;
@@ -8,37 +14,63 @@ import './index.less';
 // height: 32px
 
 /* 待传入属性值 */
-// type: 主按钮，次按钮，虚线按钮，危险按钮
-// 有无背景： true / false 默认背景颜色白色
+// type: 主按钮(primary)，默认按钮（default），虚线按钮(dashed)，危险按钮(danger)
 // shape: 圆角，椭圆
 // loading
-// icon 待续
 
 /* 自定义类型 */
 // style
 
+const prefixCls = 'rbtn';
+
 class RButton extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
-
     this.state = {
 
     };
   }
 
+  getClassName = () => {
+    const { type, shape, disabled, loading } = this.props;
+    const classNamesArray = [prefixCls]
+
+    type && classNamesArray.push(`${prefixCls}-${type}`);
+    shape && classNamesArray.push(`${prefixCls}-${shape}`);
+    disabled && classNamesArray.push(`${prefixCls}-disabled`);
+    loading && classNamesArray.push(`${prefixCls}-loading`)
+
+    return classNamesArray.join(' ');
+  }
+
   // 渲染函数
   render() {
-    const { children } = this.props;
+    const { children, disabled, loading, type } = this.props;
+
+    // 不可点击
+    if (disabled) {
+      return (
+        <button disabled className={this.getClassName()} type="button">
+          <span disabled className={`${prefixCls}_span`}>
+            {children}
+          </span>
+        </button>
+      );
+    } 
 
     return (
-      <button className="rbtn">
-        <span>
-          {children}
+      <button className={this.getClassName()} type="button">
+        <span className={`${prefixCls}_span`}>
+          {loading && <img src={(!type || type === 'dashed') ? colorLoadingIcon : whiteLoadingIcon} className="rotation" alt="loading" />} &nbsp; {children}
         </span>
       </button>
     );
   }
+}
+
+RButton.propTypes = {
+  type: PropTypes.oneOf(['primary', 'dashed', 'danger']),
+  shape: PropTypes.oneOf(['circle', 'round'])
 }
 
 export default RButton;

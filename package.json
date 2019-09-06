@@ -1,5 +1,5 @@
 {
-  "name": "rofo-lib",
+  "name": "refo-css",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +11,6 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.6",
     "babel-plugin-named-asset-import": "^0.3.3",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-react-app": "^9.0.1",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
@@ -36,9 +35,12 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.8.0",
     "jest-watch-typeahead": "0.3.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "0.5.0",
     "mutation-observer": "^1.0.3",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "path-to-regexp": "^3.1.0",
     "pnp-webpack-plugin": "1.5.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
@@ -53,6 +55,7 @@
     "resolve-url-loader": "3.1.0",
     "sass-loader": "7.2.0",
     "semver": "6.3.0",
+    "setprototypeof": "^1.2.0",
     "style-loader": "1.0.0",
     "terser-webpack-plugin": "1.4.1",
     "ts-pnp": "1.1.2",
@@ -136,9 +139,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "devDependencies": {
-    "less": "^3.10.3",
-    "less-loader": "^5.0.0"
   }
 }
