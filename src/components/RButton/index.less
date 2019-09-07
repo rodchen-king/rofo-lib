@@ -93,7 +93,7 @@
 }
 
 .rbtn.rbtn-loading {
-  position: relative;
+  position: relative;                 // 服务loading的遮罩层
   pointer-events: none;
 
   &:before {
@@ -114,37 +114,27 @@
 
   img {
     width: 14px;
-    display: inline-block;
-    color: inherit;
-    font-style: normal;
-    line-height: 0;
     text-align: center;
-    text-transform: none;
-    vertical-align: -0.125em;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    vertical-align: -0.125em;            // 图片居中（和vertical-align：middle的表现一样，不知道为什么这样写）
     pointer-events: none;
   }
 
-  @keyframes rotation{
+  @keyframes rotation {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
   }
   
-  @-moz-keyframes rotation /* Firefox */
-  {
+  @-moz-keyframes rotation { /* Firefox */
     from {-moz-transform: rotate(0deg);}
     to {-moz-transform: rotate(360deg);}
   }
   
-  @-webkit-keyframes rotation /* Safari 和 Chrome */
-  {
+  @-webkit-keyframes rotation { /* Safari 和 Chrome */
     from {-webkit-transform: rotate(0deg);}
     to {-webkit-transform: rotate(360deg);}
   }
   
-  @-o-keyframes rotation /* Opera */
-  {
+  @-o-keyframes rotation {  /* Opera */
     from {-o-transform: rotate(0deg);}
     to {-o-transform: rotate(360deg);}
   }

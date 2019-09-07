@@ -45,7 +45,14 @@ class RButton extends React.Component {
 
   // 渲染函数
   render() {
-    const { children, disabled, loading, type } = this.props;
+    const { 
+      children,
+      disabled,
+      loading,
+      type,
+      onClick,
+      style
+    } = this.props;
 
     // 不可点击
     if (disabled) {
@@ -59,7 +66,7 @@ class RButton extends React.Component {
     } 
 
     return (
-      <button className={this.getClassName()} type="button">
+      <button style={style} onClick={onClick} className={this.getClassName()} type="button">
         <span className={`${prefixCls}_span`}>
           {loading && <img src={(!type || type === 'dashed') ? colorLoadingIcon : whiteLoadingIcon} className="rotation" alt="loading" />} &nbsp; {children}
         </span>
@@ -70,7 +77,8 @@ class RButton extends React.Component {
 
 RButton.propTypes = {
   type: PropTypes.oneOf(['primary', 'dashed', 'danger']),
-  shape: PropTypes.oneOf(['circle', 'round'])
+  shape: PropTypes.oneOf(['circle', 'round']),
+  onClick: PropTypes.func
 }
 
 export default RButton;
