@@ -68,7 +68,12 @@ class RButton extends React.Component {
     return (
       <button style={style} onClick={onClick} className={this.getClassName()} type="button">
         <span className={`${prefixCls}_span`}>
-          {loading && <img src={(!type || type === 'dashed') ? colorLoadingIcon : whiteLoadingIcon} className="rotation" alt="loading" />} &nbsp; {children}
+          <span>
+          {loading && <img src={(!type || type === 'dashed') ? colorLoadingIcon : whiteLoadingIcon} className="rotation" alt="loading" />}
+          </span>
+          <span>
+            &nbsp; {children}
+          </span>
         </span>
       </button>
     );
